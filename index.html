@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annuity Calculator</title>
+  <link rel="stylesheet" href="style.css">
+
+<script src="script.js" defer></script>
+
+<!-- PDF Libraries -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+  defer>
+</script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"
+  defer>
+</script>
+
+<script src="results.js" defer></script>
+
+</head>
+
+<body>
+  
+  <! Navigation Bar >
+  <nav>
+    <a href="#home" data-page="home"> Home</a>
+    
+    <ul>
+      <li><a href="#calculate" data-page="calculate">Calculate</a></li>
+      <li><a href="#results" data-page="results">Results</a></li>
+      <li><a href="#about" data-page="about">🧁 About</a></li>
+    </ul>
+  </nav>
+  <! Navigation Bar Selesai >
+
+<! Home >
+<section id="home" class="home-section">
+  <h1>Home</h1>
+  <h2>Welcome to Our Smart Annuity Calculator ۶ৎ</h2>
+  <p>A simple annuity calculator that makes loan payment calculations easier, faster, and clearer.</p>
+  <a href="#calculate" class="start-btn" data-page="calculate">
+    Start Calculating ꕤ
+  </a>
+</section>
+<! Home Selesai >
+
+  
+<! Calculate >
+<section id="calculate" class="calculate-section">
+
+  <div class="calculate-header">
+    <h2>Let's Do Some Math!</h2>
+    <p>── .✦ Enter your loan details and let us do the calculations for you.</p>
+  </div>
+  
+  <div class="calculator-box">
+  <div class="input-group">
+      <label for="principal">Loan Amount (Rp)</label>
+      <input type="number" id="principal"
+        placeholder="e.g 1000000" min="1">
+  </div>
+
+    <div class="input-group">
+      <label for="rate">Interest Rate (%)</label>
+      <input type="number" id="rate"
+        placeholder="e.g 35" step="0.01" min="0">
+    </div>
+
+    <div class="input-group">
+      <label for="rate-period">Interest Rate Period</label>
+      <select id="rate-period">
+        <option value="1">1 Month</option>
+        <option value="2">2 Months</option>
+        <option value="3">3 Months</option>
+        <option value="4">4 Months</option>
+        <option value="5">5 Months</option>
+        <option value="6">6 Months</option>
+        <option value="7">7 Months</option>
+        <option value="8">8 Months</option>
+        <option value="9">9 Months</option>
+        <option value="10">10 Months</option>
+        <option value="11">11 Months</option>
+        <option value="12">12 Months</option>
+        <option value="13">13 Months</option>
+        <option value="14">14 Months</option>
+        <option value="15">15 Months</option>
+        <option value="16">16 Months</option>
+        <option value="17">17 Months</option>
+        <option value="18">18 Months</option>
+        <option value="19">19 Months</option>
+        <option value="20">20 Months</option>
+        <option value="21">21 Months</option>
+        <option value="22">22 Months</option>
+        <option value="23">23 Months</option>
+        <option value="24">24 Months</option>
+        <option value="25">25 Months</option>
+        <option value="26">26 Months</option>
+        <option value="27">27 Months</option>
+        <option value="28">28 Months</option>
+        <option value="29">29 Months</option>
+        <option value="30">30 Months</option>
+        <option value="31">31 Months</option>
+        <option value="32">32 Months</option>
+        <option value="33">33 Months</option>
+        <option value="34">34 Months</option>
+        <option value="35">35 Months</option>
+        <option value="36">36 Months</option>
+        <option value="37">37 Months</option>
+        <option value="38">38 Months</option>
+        <option value="39">39 Months</option>
+        <option value="40">40 Months</option>
+        <option value="41">41 Months</option>
+        <option value="42">42 Months</option>
+        <option value="43">43 Months</option>
+        <option value="44">44 Months</option>
+        <option value="45">45 Months</option>
+        <option value="46">46 Months</option>
+        <option value="47">47 Months</option>
+        <option value="48">48 Months</option>
+        <option value="49">49 Months</option>
+        <option value="50">50 Months</option>
+        <option value="51">51 Months</option>
+        <option value="52">52 Months</option>
+        <option value="53">53 Months</option>
+        <option value="54">54 Months</option>
+        <option value="55">55 Months</option>
+        <option value="56">56 Months</option>
+        <option value="57">57 Months</option>
+        <option value="58">58 Months</option>
+        <option value="59">59 Months</option>
+        <option value="60">60 Months</option>
+        <option value="61">61 Months</option>
+        <option value="62">62 Months</option>
+        <option value="63">63 Months</option>
+        <option value="64">64 Months</option>
+        <option value="65">65 Months</option>
+        <option value="66">66 Months</option>
+        <option value="67">67 Months</option>
+        <option value="68">68 Months</option>
+        <option value="69">69 Months</option>
+        <option value="70">70 Months</option>
+        <option value="71">71 Months</option>
+        <option value="72">72 Months</option>
+        <option value="73">73 Months</option>
+        <option value="74">74 Months</option>
+        <option value="75">75 Months</option>
+        <option value="76">76 Months</option>
+        <option value="77">77 Months</option>
+        <option value="78">78 Months</option>
+        <option value="79">79 Months</option>
+        <option value="80">80 Months</option>
+        <option value="81">81 Months</option>
+        <option value="82">82 Months</option>
+        <option value="83">83 Months</option>
+        <option value="84">84 Months</option>
+        <option value="85">85 Months</option>
+        <option value="86">86 Months</option>
+        <option value="87">87 Months</option>
+        <option value="88">88 Months</option>
+        <option value="89">89 Months</option>
+        <option value="90">90 Months</option>
+        <option value="91">91 Months</option>
+        <option value="92">92 Months</option>
+        <option value="93">93 Months</option>
+        <option value="94">94 Months</option>
+        <option value="95">95 Months</option>
+        <option value="96">96 Months</option>
+        <option value="97">97 Months</option>
+        <option value="98">98 Months</option>
+        <option value="99">99 Months</option>
+        <option value="100">100 Months</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="period">Loan Period (months)</label>
+      <input type="number" id="period"
+        placeholder="e.g 24" min="1" step="1">
+    </div>
+
+    <button type="button" class="calculate-btn">
+      Calculate ꕤ
+    </button>
+
+  </div>
+</section>
+<! Calculate Selesai >
+
+
+<!-- RESULTS SECTION -->
+<section id="results" class="results-section">
+
+  <div class="results-header">
+    <h3>
+      Here is your complete monthly payment schedule ૮₍ ´ ꒳ `₎ა
+  </h3>
+  </div>
+
+  <!-- AMORTIZATION TABLE -->
+  <div class="table-container">
+    <table class="amortization-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Principal Payment (Rp)</th>
+          <th>Interest Payment (Rp)</th>
+          <th>Annuity (Rp)</th>
+          <th>Remaining Balance (Rp)</th>
+        </tr>
+      </thead>
+
+      <tbody id="amortization-body"></tbody>
+    </table>
+  </div>
+
+  <!-- TOTAL RESULTS -->
+  <div class="results-total">
+    <div>
+      <span>Total Payment</span>
+      <strong id="result-total-payment">-</strong>
+    </div>
+
+    <div>
+      <span>Total Interest</span>
+      <strong id="result-total-interest">-</strong>
+    </div>
+  </div>
+
+<!-- DOWNLOAD PDF -->
+<button
+  type="button"
+  class="download-pdf-btn"
+  id="download-pdf">
+  Download PDF
+</button>
+
+  <!-- CALCULATE AGAIN -->
+  <a href="#calculate"
+     class="back-btn"
+     id="calculate-again"
+     data-page="calculate">
+    Calculate Again ꕤ
+  </a>
+
+</section>
+<!-- RESULTS SECTION SELESAI -->
+
+  
+<!-- ABOUT / TEAM SECTION -->
+<section id="about" class="about-section">
+
+  <h2>Introducing</h2>
+  <h2>Our Team! ≽(◉˕ ◉ ≼マ</h2>
+
+  <div class="introduction-team">
+    <h3>Nafisah Nazza Naylaturrahmah (24)</h3>
+    <h3>Keyzha Virsyahthea Noer Fadilah (27)</h3>
+    <h3>Yanti Rahmawanti (40)</h3>
+    <h3>Sulthaan Nur Sya'ban (37)</h3>
+    <h3>M. Ghaza Ahnafi Dliyaulhaq (22)</h3>
+  </div>
+
+  <button
+    type="button"
+    class="meet-team-btn"
+    onclick="openTeamPopup()">
+    /ᐠ • ˕ •マ ?
+  </button>
+
+</section>
+<!-- ABOUT / TEAM SECTION SELESAI -->
+
+<!-- TEAM POPUP -->
+<div id="teamPopup" class="popup-overlay">
+
+  <div class="popup-box">
+
+    <div class="popup-icon">
+      Thank you for visiting our Annuity Calculator!
+    </div>
+
+    <h2>────୨ৎ────</h2>
+
+    <img
+      src="kelompokasli.jpg"
+      alt="Our Team"
+      class="team-photo">
+
+    <p>Math Project • SMAN 1 Tasikmalaya</p>
+
+    <button type="button" onclick="closeTeamPopup()">
+      OK!
+    </button>
+
+  </div>
+</div>
+<!-- TEAM POPUP SELESAI -->
+
+  
+<!-- ===== CUSTOM POPUP ===== -->
+<div id="customPopup" class="popup-overlay">
+  <div class="popup-box">
+    <div class="popup-icon">₍^. .^₎⟆</div>
+
+    <h2 id="popupTitle">OOPS!</h2>
+
+    <p id="popupMessage">
+      Please enter valid values for all fields.
+    </p>
+
+    <button onclick="closePopup()">OK!</button>
+  </div>
+</div>
+
+<!-- ===== CALCULATION LOADING SCREEN ===== -->
+<div id="loadingScreen" class="loading-overlay">
+  <div class="loading-box">
+    <div class="loading-sparkle">⋆˚꩜｡ּ</div>
+
+    <h2 id="loadingTitle">Calculating...</h2>
+
+    <div class="loading-character">
+      ⚞^. .^⚟
+    </div>
+
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <p id="progressText">0%</p>
+
+    <p id="loadingMessage">
+      Almost there!
+    </p>
+  </div>
+</div>
+
+  <!-- FLOATING MUSIC BUTTON -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-button"
+        type="button" aria-label="Mute music"
+        title="Mute music">
+  ♪
+</button>
+  
+</body>
+</html>
